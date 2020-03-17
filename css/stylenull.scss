@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+:focus, :active{outline: none;}
+html, body {
+    font-family: Roboto, sans-serif;
+}
+button, a {cursor: pointer;}
+a, a:visited {text-decoration: none;}
+li {list-style-type: none}
