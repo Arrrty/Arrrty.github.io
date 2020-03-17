@@ -1,0 +1,27 @@
+{
+  "name": "project_ss",
+  "version": "1.0.0",
+  "description": "project SimbirSoft",
+  "main": "main.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arrrty/Arrrty.github.io.git"
+  },
+  "author": "Yakimov Artyom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Arrrty/Arrrty.github.io/issues"
+  },
+  "homepage": "https://github.com/Arrrty/Arrrty.github.io#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
