@@ -26,65 +26,56 @@ $cgrayl: #EEE;
 }
 
 @mixin search() {
+    position: relative;
+    color: $cgrayd;
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    span {
-        height: 16px;
-        margin-right: 10px;
-        color: $cblack;
-    }
-    & > div {
-        position: relative;
-        color: $cgrayd;
+    flex-direction: column;
+    width: 224px;
+    div {
         display: flex;
-        flex-direction: column;
-        width: 225px;
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid $cgrayd;
-            padding: 3px 10px;
-            input {
-                font-weight: 300;
-                font-size: 14px;
-                line-height: 16px;
-                &::placeholder {
-                    color: $cgrayd;
-                }
-            }
-            svg {
-                display: none;
-                &:hover {
-                    cursor: pointer;
-                }
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $cgrayd;
+        padding: 3px 10px;
+        input {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 16px;
+            &::placeholder {
+                color: $cgrayd;
             }
         }
-        ul {
+        svg {
             display: none;
-            position: absolute;
-            flex-direction: column;
-            background: white;
-            border: 1px solid $cgrayl;
-            border-top: none;
-            z-index: 1;
-            top: 23px;
-            width: 100%;
-            max-height: 100px;
-            overflow-y: auto;
-            li {
-                padding: 3px 10px;
-                a {
-                    color: $cgrayd;
-                    &:hover {
-                        color: $cmain;
-                    }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    ul {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        background: white;
+        border: 1px solid $cgrayl;
+        border-top: none;
+        z-index: 1;
+        top: 23px;
+        width: 100%;
+        max-height: 100px;
+        overflow-y: auto;
+        li {
+            padding: 3px 10px;
+            a {
+                color: $cgrayd;
+                &:hover {
+                    color: $cmain;
                 }
             }
         }
     }
 }
+
 
 @mixin radio {
     input {
@@ -199,6 +190,8 @@ $cgrayl: #EEE;
         flex-grow: 1;
         .tab_item { 
             display: none; 
+            width: 95%;
+            max-width: 730px;
             &:first-child { 
                 display: block; 
             }
@@ -212,41 +205,57 @@ $cgrayl: #EEE;
     justify-content: flex-end;
     width: 328px;
     margin-bottom: 45px;
-}
-
-.search-cities {
-    @include search();
-}
-
-.search-cities__list {
-    &::-webkit-scrollbar {
-        width: 3px;
+    .search-cities {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        span {
+            height: 16px;
+            margin-right: 10px;
+            color: $cblack;
+        }
+        .search-cities__form {
+            @include search();
+        }
+        .search-cities__list {
+            &::-webkit-scrollbar {
+                width: 3px;
+            }
+            &::-webkit-scrollbar-thumb {
+                width: 2px;
+                border-radius: 2px;
+                background-color: $cgrayd;
+            }
+            &::-webkit-scrollbar-track {
+                border-left: 1px solid $cgrayl;
+            }
+        }
     }
-    &::-webkit-scrollbar-thumb {
-        width: 2px;
-        border-radius: 2px;
-        background-color: $cgrayd;
-    }
-    &::-webkit-scrollbar-track {
-        border-left: 1px solid $cgrayl;
-    }
-}
-
-.search-points {
-    @include search();
-}
-
-.search-points__list {
-    &::-webkit-scrollbar {
-        width: 3px;
-    }
-    &::-webkit-scrollbar-thumb {
-        width: 2px;
-        border-radius: 2px;
-        background-color: $cgrayd;
-    }
-    &::-webkit-scrollbar-track {
-        border-left: 1px solid $cgrayl;
+    .search-points {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        span {
+            height: 16px;
+            margin-right: 10px;
+            color: $cblack;
+        }
+        .search-points__form {
+            @include search();
+        }
+        .search-points__list {
+            &::-webkit-scrollbar {
+                width: 3px;
+            }
+            &::-webkit-scrollbar-thumb {
+                width: 2px;
+                border-radius: 2px;
+                background-color: $cgrayd;
+            }
+            &::-webkit-scrollbar-track {
+                border-left: 1px solid $cgrayl;
+            }
+        }
     }
 }
 
@@ -263,7 +272,7 @@ $cgrayl: #EEE;
             margin-bottom: 16px;
         }
         img {
-            width: 82%;
+            width: 100%;
         }
     }
 }
@@ -271,6 +280,7 @@ $cgrayl: #EEE;
 .model {
     display: flex;
     flex-direction: column;
+    position: relative;
     height: 100%;
     .sorting-cars {
         margin-bottom: 50px;
@@ -280,10 +290,10 @@ $cgrayl: #EEE;
         position: absolute;
         display: flex;
         flex-wrap: wrap;
-        width: 50%;
+        width: 100%;
         overflow-y: auto;
         flex-grow: 1;
-        height: 70%;
+        height: 92%;
         bottom: 0;
         &::-webkit-scrollbar {
             width: 0;
@@ -333,6 +343,17 @@ $cgrayl: #EEE;
     }
 
     .extra__date {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        width: 250px;
+        p {
+            width: 100%;
+        }
+        span {
+            margin-right: 8px;
+        }
         .extra__date-from {
             @include search();
         }

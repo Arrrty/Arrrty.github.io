@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: {
     bundle: [
-      './src/main.js', './src/scss/main.scss'
+      './src/main.js'
     ]
   },
   output: {
@@ -16,27 +16,7 @@ module.exports = {
           {
               test: /\.js$/,
               use: ['babel-loader']
-          },
-          {
-            test: /\.scss$/,
-            use: [
-              MiniCssExtractPlugin.loader, 
-              'css-loader',
-              {
-                loader: 'css-loader',
-                options: { sourceMap: true }
-              },
-              {
-                loader: 'sass-loader',
-                options: { sourceMap: true }
-              },
-            ]
-          },
+          }
       ]
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css'
-    }),
-  ],
+  }
 };
