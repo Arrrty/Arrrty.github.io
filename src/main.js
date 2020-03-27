@@ -15,13 +15,6 @@ var pointsList = document.querySelector(".search-points__list");
 var carsBlock = document.querySelector(".cars__block");
 var infoBtn = document.querySelector(".info button");
 
-window.onload = function () {
-  var mySwiper = new Swiper ('.swiper-container', {
-    direction: 'horizontal',
-    loop: true,
-  });
-};
-
 burger.addEventListener('click', function(ev) {
   console.log(ev);
   let m;
