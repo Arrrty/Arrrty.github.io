@@ -70,7 +70,7 @@ li {
   /* Legacy iOS */
 }
 
-.flex-main {
+.order {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,7 +128,7 @@ li {
   margin: 0 15px;
 }
 
-.main-order main {
+.main-order .board-order {
   padding: 32px 65px 0;
   height: 100%;
   -webkit-box-flex: 1;
@@ -136,13 +136,13 @@ li {
           flex-grow: 1;
 }
 
-.main-order main .tab_item {
+.main-order .board-order .tab_item {
   display: none;
   width: 95%;
   max-width: 730px;
 }
 
-.main-order main .tab_item:first-child {
+.main-order .board-order .tab_item:first-child {
   display: block;
 }
 
@@ -412,7 +412,7 @@ li {
 }
 
 .location .location-map img {
-  width: 100%;
+  width: 700px;
 }
 
 .model {
@@ -1252,10 +1252,6 @@ header .header__region .header__vector-svg svg:last-child {
   padding-bottom: 2px;
 }
 
-.menu .menu__language p:last-child {
-  display: none;
-}
-
 .menu__active {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1404,10 +1400,6 @@ header .header__region .header__vector-svg svg:last-child {
 .menu__active .menu__language p {
   color: #0EC261;
   padding-bottom: 2px;
-}
-
-.menu__active .menu__language p:last-child {
-  display: none;
 }
 
 .app {

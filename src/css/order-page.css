@@ -1,4 +1,4 @@
-.flex-main {
+.order {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,7 +56,7 @@
   margin: 0 15px;
 }
 
-.main-order main {
+.main-order .board-order {
   padding: 32px 65px 0;
   height: 100%;
   -webkit-box-flex: 1;
@@ -64,13 +64,13 @@
           flex-grow: 1;
 }
 
-.main-order main .tab_item {
+.main-order .board-order .tab_item {
   display: none;
   width: 95%;
   max-width: 730px;
 }
 
-.main-order main .tab_item:first-child {
+.main-order .board-order .tab_item:first-child {
   display: block;
 }
 
@@ -340,7 +340,7 @@
 }
 
 .location .location-map img {
-  width: 100%;
+  width: 700px;
 }
 
 .model {

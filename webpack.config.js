@@ -11,10 +11,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
   },
+  devtool: '#sourcmap',
   module: {
       rules: [
           {
               test: /\.js$/,
+              exclude: /(node_modules)/,
               use: ['babel-loader']
           }
       ]

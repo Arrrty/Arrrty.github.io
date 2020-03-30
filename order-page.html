@@ -67,8 +67,8 @@
             <span class="section">Итого</span>
             <p class="order-number" style="display: none;">Заказ номер <span>RU58491823</span></p>
         </nav>
-        <div class="flex-main">
-            <main>
+        <div class="order">
+            <div class="board-order">
                 <div class="location tab_item">
                     <div class="location-search">
                         <div class="search-cities">
@@ -219,7 +219,7 @@
                         <img src="src/img/image 2.png" alt="">
                     </div>
                 </div>
-            </main>
+            </div>
             <div class="info">  
                  <h2>Ваш заказ:</h2>
                  <div class="info__point"> 
@@ -242,12 +242,12 @@
         <button onclick = "popupShow()">Вернуться</button>
     </div>
  </div>
-  <script>
+  <!-- <script>
     $(".main-order .section").click(function() {
         console.log($(".main-order .section").eq($(this).index()))
         $(".main-order .section").removeClass("active").eq($(this).index()).addClass("active");
         $(".tab_item").hide().eq($(this).index()).fadeIn();
     }).eq(0).addClass("active");
-  </script>
+  </script> -->
 </body>
 </html>  

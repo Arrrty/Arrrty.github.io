@@ -5,7 +5,6 @@ var menuContainer = document.querySelector(".flex-display > div");
 var menu = document.querySelector("menu");
 var main = document.querySelector(".main");
 var mainOrder = document.querySelector(".main-order");
-var mainEl = document.querySelector("main *");
 var cities = document.querySelector(".search-cities input");
 var citiesClose = document.querySelector(".search-cities svg");
 var citiesList = document.querySelector(".search-cities__list");
@@ -14,31 +13,6 @@ var pointsClose = document.querySelector(".search-points svg");
 var pointsList = document.querySelector(".search-points__list");
 var carsBlock = document.querySelector(".cars__block");
 var infoBtn = document.querySelector(".info button");
-
-burger.addEventListener('click', function(ev) {
-  console.log(ev);
-  let m;
-  if (main !== null) {
-    m = main;
-  } else {
-    m = mainOrder;
-  }
-  if (menu.style.display == 'none') {
-    menuContainer.className = "menu__active";
-    menu.style.display = 'block';
-    m.style.backgroundColor = 'black';
-    for (let i=0; i < m.children.length; i++) {
-      m.children[i].style.opacity = 0;
-    }
-  } else if (menu.style.display == 'block') {
-    menuContainer.className = "menu";
-    m.style.backgroundColor = 'white';
-    menu.style.display = 'none';
-    for (let i=0; i < m.children.length; i++) {
-      m.children[i].style.opacity = 1;
-    }
-  }
-});
 
 function fill() {
   let a = event.target;
