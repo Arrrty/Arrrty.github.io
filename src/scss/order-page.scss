@@ -176,6 +176,9 @@ $cgrayl: #EEE;
         span {
             font-weight: bold;
             font-size: 14px;
+            &:last-child svg {
+                display: none;
+            }
             &:hover {
                 cursor: pointer;
             }
@@ -190,8 +193,7 @@ $cgrayl: #EEE;
         flex-grow: 1;
         .tab_item { 
             display: none; 
-            width: 95%;
-            max-width: 730px;
+            width: 730px;
             &:first-child { 
                 display: block; 
             }
@@ -260,6 +262,7 @@ $cgrayl: #EEE;
 }
 
 .location {
+    width: 740px;
     font-weight: 300;
     font-size: 14px;
     line-height: 16px;
@@ -350,12 +353,17 @@ $cgrayl: #EEE;
         width: 250px;
         p {
             width: 100%;
+            & + span {
+                margin-bottom: 10px;
+            }
         }
         span {
             margin-right: 8px;
         }
         .extra__date-from {
             @include search();
+            margin-bottom: 10px;
+
         }
         .extra__date-by {
             @include search();
@@ -466,6 +474,7 @@ $cgrayl: #EEE;
 }
 
 .popup {
+    display: none;
     position: absolute;
     justify-content: center;
     align-items: center;

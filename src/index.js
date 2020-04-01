@@ -82,113 +82,193 @@ function Footer(props) {
       );
 }
 
-function Location(props) {
-    return (
-        <div class="location tab-item">
-            <div class="location-search">
-                <div class="search-cities">
-                    <span>Город</span>
-                    <div class="search-cities__form">
-                        <div>
-                            <input type="text" placeholder="Начните вводить город ..." onkeyup="filter('cities')" />
-                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 0.805714L7.19429 0L4 3.19429L0.805714 0L0 0.805714L3.19429 4L0 7.19429L0.805714 8L4 4.80571L7.19429 8L8 7.19429L4.80571 4L8 0.805714Z" fill="#121212"/>
-                            </svg>      
-                        </div>
-                        <ul class="search-cities__list">
-                            <li><a href="#" onclick="fill()">Москва</a></li>
-                            <li><a href="#" onclick="fill()">Казань</a></li>
-                            <li><a href="#" onclick="fill()">Ульяновск</a></li>
-                            <li><a href="#" onclick="fill()">Самара</a></li>
-                            <li><a href="#" onclick="fill()">Тальятти</a></li>
-                            <li><a href="#" onclick="fill()">Нижний Новгород</a></li>
-                            <li><a href="#" onclick="fill()">Пермь</a></li>
-                        </ul>
+class Search extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    filter() {
+        var filter, li, a, i;
+        let input = document.querySelector("." + this.props.className + " input");
+        let svg = document.querySelector("." + this.props.className + " svg");
+        let list = document.querySelector("." + this.props.className + "__list");
+
+        list.style.display = "flex";
+        filter = input.value.toUpperCase();
+        li = list.getElementsByTagName('li');
+
+        if (input.value !== "") {
+            svg.style.display = "block"
+        } else {
+            svg.style.display = "none"
+        }
+
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+        }
+    }
+
+    fill() {
+        let a = event.target;
+        let input = document.querySelector("." + this.props.className + " input");
+        let svg = document.querySelector("." + this.props.className + " svg");
+        let list = document.querySelector("." + this.props.className + "__list");
+        input.value = a.innerHTML;
+        list.style.display = "none";
+        svg.style.display = "block"
+    }
+
+    erase() {
+        let svg = document.querySelector("." + this.props.className + " svg");
+        let input = document.querySelector("." + this.props.className + " input");
+        input.value = "";
+        svg.style.display = "none"
+    }
+
+    li(i) {
+        return (
+            <li><a href="#" onClick={() => this.fill()}>{this.props.list[i]}</a></li>
+        );
+    }
+
+    render() {
+        return (
+            <div className={this.props.className}>
+                <span>{this.props.name}</span>
+                <div className={this.props.className + "__form"}>
+                    <div>
+                        <input type="text" placeholder="Начните вводить город ..." onKeyUp={() => this.filter()}/>
+                        <svg onClick={() => this.erase()} width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 0.805714L7.19429 0L4 3.19429L0.805714 0L0 0.805714L3.19429 4L0 7.19429L0.805714 8L4 4.80571L7.19429 8L8 7.19429L4.80571 4L8 0.805714Z" fill="#121212"/>
+                        </svg>
                     </div>
-                </div>
-                <div class="search-points">
-                    <span>Пункт выдачи</span>
-                    <div class="search-points__form">
-                        <div>
-                            <input type="text" placeholder="Начните вводить пункт ..." onkeyup="filter('point')" />
-                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 0.805714L7.19429 0L4 3.19429L0.805714 0L0 0.805714L3.19429 4L0 7.19429L0.805714 8L4 4.80571L7.19429 8L8 7.19429L4.80571 4L8 0.805714Z" fill="#121212"/>
-                            </svg>      
-                        </div>
-                        <ul class="search-points__list">
-                            <li><a href="#about" onclick="fill()">Москва</a></li>
-                            <li><a href="#base" onclick="fill()">Казань</a></li>
-                            <li><a href="#blog" onclick="fill()">Ульяновск</a></li>
-                            <li><a href="#contact" onclick="fill()">Самара</a></li>
-                            <li><a href="#custom" onclick="fill()">Тальятти</a></li>
-                            <li><a href="#support" onclick="fill()">Нижний Новгород</a></li>
-                            <li><a href="#tools" onclick="fill()">Пермь</a></li>
-                        </ul>
-                    </div>
+                    <ul className={this.props.className + "__list"}>
+                        {this.li(0)}
+                        {this.li(1)}
+                        {this.li(2)}
+                        {this.li(3)}
+                        {this.li(4)}
+                        {this.li(5)}
+                    </ul>
                 </div>
             </div>
-            <div class="location-map" >
-                <span>Выбрать на карте:</span>
-                <img src="src/img/Rectangle.png" alt="Здесь должна быть карта" />
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
-function Model(props) {
-    return (
-        <div class="model tab_item">
-            <div class="sorting-cars">
-                <input type="radio" name="radiobutton" id="r1" checked/><label for="r1"> Все модели </label>
-                <input type="radio" name="radiobutton" id="r2"/><label for="r2"> Эконом </label>
-                <input type="radio" name="radiobutton" id="r3"/><label for="r3"> Премиум </label>
+class Location extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cities: {
+                className: "search-cities",
+                name: "Город",
+                searchList: ["Москва", "Казань", "Ульяновск", "Самара", "Тальятти", "Нижний Новгород"]
+            },
+            points: {
+                className: "search-points",
+                name: "Пункт выдачи",
+                searchList: ["Москва", "Казань", "Ульяновск", "Самара", "Тальятти", "Нижний Новгород"]
+            },
+        };
+    }
+
+    render() {
+        return (
+            <div class="location tab-item">
+                <div class="location-search">
+                    <Search 
+                        className={this.state.cities.className}
+                        list={this.state.cities.searchList}
+                        name={this.state.cities.name}
+                    />
+                    <Search 
+                        className={this.state.points.className}
+                        list={this.state.points.searchList}
+                        name={this.state.points.name}
+                    />
+                </div>
+                <div class="location-map" >
+                    <span>Выбрать на карте:</span>
+                    <img src="src/img/Rectangle.png" alt="Здесь должна быть карта" />
+                </div>
             </div>
-            <div class="cars">
-                <section class="cars__block">
-                    <div class="cars__name">
-                        <h2>ELANTRA</h2>
-                        <p>12 000 - 25 000 ₽</p>
-                    </div>
-                    <img src="src/img/image 1.png" alt=""/>
-                </section>
-                <section class="cars__block">
-                    <div class="cars__name">
-                        <h2>i30 N</h2>
-                        <p>10 000 - 32 000 ₽</p>
-                    </div>
-                    <img src="src/img/image 2.png" alt=""/>
-                </section>
-                <section class="cars__block">
-                    <div class="cars__name">
-                        <h2>CRETA</h2>
-                        <p>12 000 - 25 000 ₽</p>
-                    </div>
-                    <img src="src/img/image 3.png" alt=""/>
-                </section>
-                <section class="cars__block">
-                    <div class="cars__name">
-                        <h2>SONATA</h2>
-                        <p>10 000 - 32 000 ₽</p>
-                    </div>
-                    <img src="src/img/image 4.png" alt=""/>
-                </section>
-                <section class="cars__block">
-                    <div class="cars__name">
-                        <h2>ELANTRA</h2>
-                        <p>12 000 - 25 000 ₽</p>
-                    </div>
-                    <img src="src/img/image 1.png" alt=""/>
-                </section>
-                <section class="cars__block">
-                    <div class="cars__name">
-                        <h2>i30 N</h2>
-                        <p>10 000 - 32 000 ₽</p>
-                    </div>
-                    <img src="src/img/image 2.png" alt=""/>
-                </section>
+        );
+    }
+}
+
+class Model extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            radio: "all",
+            models: [
+                {
+                    model: "ELANTRA",
+                    price: "12 000 - 25 000 ₽",
+                    img: "src/img/image 1.png"
+                },
+                {
+                    model: "i30 N",
+                    price: "10 000 - 32 000 ₽",
+                    img: "src/img/image 2.png"
+                },
+                {
+                    model: "CRETA",
+                    price: "12 000 - 25 000 ₽",
+                    img: "src/img/image 3.png"
+                },
+                {
+                    model: "SONATA",
+                    price: "10 000 - 32 000 ₽",
+                    img: "src/img/image 4.png"
+                }
+            ]
+        };
+    }
+
+    sectionActive() {
+        console.log(this)
+        a = this;
+    }
+
+    section(i) {
+        return (
+            <section class="cars__block" onClick={() => this.sectionActive()}>
+                <div class="cars__name">
+                    <h2>{this.state.models[i].model}</h2>
+                    <p>{this.state.models[i].price}</p>
+                </div>
+                <img src={this.state.models[i].img} alt=""/>
+            </section>
+        );
+    }
+
+    render() {
+        return (
+            <div class="model tab_item">
+                <div class="sorting-cars">
+                    <input type="radio" name="radiobutton" id="r1"/><label for="r1"> Все модели </label>
+                    <input type="radio" name="radiobutton" id="r2"/><label for="r2"> Эконом </label>
+                    <input type="radio" name="radiobutton" id="r3"/><label for="r3"> Премиум </label>
+                </div>
+                <div class="cars">
+                    {this.section(0)}
+                    {this.section(1)}
+                    {this.section(2)}
+                    {this.section(3)}
+                    {this.section(0)}
+                    {this.section(1)}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 function Extra(props) {
@@ -250,6 +330,30 @@ function Total(props) {
             </div>
         </div>
     );
+}
+
+function popupShow() {
+    let popup = document.querySelector(".popup");
+    if (popup.style.display == 'none') {
+        popup.style.display = 'flex';
+    } else {
+        popup.style.display = 'none';
+    }
+}
+
+class Popup extends React.Component {
+
+    render() {
+        return (
+            <div class="popup">
+                <div class="popup__confirm">
+                    <span>Подтвердить заказ</span>
+                    <button onClick ={() =>  popupShow()}>Подтвердить</button>
+                    <button onClick ={() =>  popupShow()}>Вернуться</button>
+                </div>
+            </div>
+        );
+    }
 }
 
 class MenuBar extends React.Component {
@@ -428,7 +532,7 @@ class Order extends React.Component {
         return (
             <div class="order">
                <div class="board-order">
-                    {atab}
+                    {tab}
                 </div>
                 <Info />
             </div>
@@ -453,7 +557,7 @@ class Info extends React.Component {
                  <div class="info__price">
                      <p><b>Цена:</b> от 8 000 до 12 000 ₽</p>
                  </div>
-                 <button onclick = "popupShow()">Выбрать модель</button>
+                 <button onClick ={() =>  popupShow()}>Выбрать модель</button>
             </div>
         );
     }
@@ -493,6 +597,7 @@ class App extends React.Component {
                         className="main-order"
                         onClick={() => this.transition()} 
                     />
+                    <Popup />
                 </div>
             );
         }

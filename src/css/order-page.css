@@ -48,6 +48,10 @@
   font-size: 14px;
 }
 
+.main-order nav span:last-child svg {
+  display: none;
+}
+
 .main-order nav span:hover {
   cursor: pointer;
 }
@@ -66,8 +70,7 @@
 
 .main-order .board-order .tab_item {
   display: none;
-  width: 95%;
-  max-width: 730px;
+  width: 730px;
 }
 
 .main-order .board-order .tab_item:first-child {
@@ -320,6 +323,7 @@
 }
 
 .location {
+  width: 740px;
   font-weight: 300;
   font-size: 14px;
   line-height: 16px;
@@ -503,6 +507,10 @@
   width: 100%;
 }
 
+.extra .extra__date p + span {
+  margin-bottom: 10px;
+}
+
 .extra .extra__date span {
   margin-right: 8px;
 }
@@ -518,6 +526,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   width: 224px;
+  margin-bottom: 10px;
 }
 
 .extra .extra__date .extra__date-from div {
@@ -918,6 +927,7 @@
 }
 
 .popup {
+  display: none;
   position: absolute;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
