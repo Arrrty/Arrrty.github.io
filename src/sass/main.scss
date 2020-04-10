@@ -1,0 +1,542 @@
+@import "stylenull.scss";
+@import "stylefonts.scss";
+@import "order-page.scss";
+
+$cmain: #0EC261;
+$cblack: #121212;
+$cgrayd: #999999;
+$cgrayl: #EEE;
+
+p {
+    font-style: normal;
+    font-weight: 300;
+    color: $cgrayd;
+}
+
+@mixin a($color, $colorh, $colora) {
+    color: $color;
+    &:hover {
+        color: $colorh;
+    }
+    &:active {
+        color: $colora;
+    }
+    &:disabled {
+        color: $cgrayd;
+    }
+}
+
+@mixin button ($w, $h, $cb1, $cb2, $cbh1, $cbh2, $cba1, $cba2, $br) {
+    background: linear-gradient(90deg, $cb1 0%, $cb2 100%);
+    background-blend-mode: darken;
+    border-radius: $br;
+    padding: 15px 0;
+    width: $w;
+    height: $h;
+    border: none;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    &:hover {
+        background: linear-gradient(90deg, $cbh1 2.61%, $cbh2 112.6%);
+    }
+    &:active {
+        background: linear-gradient(90deg, $cba1 2.61%, $cba2 112.6%);
+    }
+    &:disabled {
+        background: #EEEEEE;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 32px;
+    p {
+        font-size: 14px;
+    }
+    .header__menu {
+        display: none;
+    }
+    .header__logo {
+        float: left;
+        font-size: 30px;
+        color: $cmain;
+        font-weight: bold;
+        a {
+            color: $cmain;
+        }
+    }
+
+    .header__region {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .header__vector-svg {
+            position: relative;
+            width: 5px;
+            height: 5px;
+
+            svg {
+                &:first-child {
+                    position: absolute;
+                    top: -5px;
+                    left: -15px;
+                }
+                &:last-child {
+                    position: absolute;
+                    top: -10px;
+                    left: -20px;
+                }
+            }
+        }
+    }
+}
+
+.flex-display{
+    display: flex;
+    height: 100vh;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 64px;
+    background-color: #151B1F;
+    .menu__burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 33px;
+        height: 30px;
+        width: 100%;
+        &:hover{
+            cursor: pointer;
+        }
+        span {
+            display: block;
+            height: 3px;
+            width: 37%;
+            background-color: white;
+            border-radius: 2px;
+        }
+    }
+    menu {
+        display: none;
+    }
+    .menu__language {
+        align-self: flex-end;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 22px;
+        font-size: 13px;
+        &:hover {
+            cursor: pointer;
+            border: 1px solid $cgrayl;
+            border-radius: 21px;
+            p {
+                color: $cgrayl;
+            }
+        }
+        &:active {
+            p {
+                color: $cmain;
+            }
+        }
+        p {
+            color: $cmain;
+            padding-bottom: 2px;
+        }  
+    }
+}
+.menu__active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 20;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(21, 27, 31, 0.81);
+    .menu__burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 40px;
+        height: 25px;
+        width: 65px;
+        &:hover{
+            cursor: pointer;
+        }
+        span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 24px;
+            background-color: white;
+            border-radius: 2px;
+            &:nth-child(2) {
+                display: none;
+            }
+            &:first-child {
+                transform:  rotate(45deg);
+            }
+            &:last-child {
+                transform:  rotate(-45deg);
+            }
+            
+        }
+    }
+    menu {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 55px;
+        margin-left: 130px;
+        a {
+            color: $cgrayl;
+            &:hover {
+                color: $cmain;
+                cursor: pointer;
+            }
+        }
+        ol {
+            margin-top: 35px;
+            columns: 3;
+            column-gap: 0;
+            width: 167px;
+            li {
+                a {
+                    display: block;
+                    background-image: url(assets/img/Group.png);
+                    background-repeat: no-repeat;
+                    width: 33px;
+                    height: 33px;
+                    &:hover {
+                        background-image: url(assets/img/Group2.png);
+                        cursor: pointer;
+                    }
+                }
+                &:nth-child(2) a {
+                    background-position-x: -56px;
+                }
+                &:nth-child(3) a {
+                    background-position-x: -111px;
+                }
+            }
+        }
+    }
+    .menu__language {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        margin: 0 14px 22px;
+        font-size: 13px;
+        &:hover {
+            cursor: pointer;
+            border: 1px solid $cgrayl;
+            border-radius: 21px;
+            p {
+                color: $cgrayl;
+            }
+        }
+        &:active {
+            p {
+                color: $cmain;
+            }
+        }
+        p {
+            color: $cmain;
+            padding-bottom: 2px;
+        }  
+    }
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 34px 64px;
+    main {
+        height: 47%;
+        h1 {
+            font-weight: bold;
+            font-size: 70px;
+            line-height: 66px;
+            margin: 0;
+
+            &:nth-child(2) {
+                color: $cmain;
+                margin-bottom: 30px;
+            }
+        }
+
+        p {
+            font-size: 26px;
+            line-height: 30px;
+            margin-bottom: 56px;
+        }
+        button {
+            @include button(250px, 48px, #0EC261, #039F67, #0B934A, #026E47, #076432, #013C27,  8px);
+        }
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        a {
+            @include a ($cblack, $cmain, $cmain)
+        }
+    }
+}
+.swiper-container {
+    width: 47.8%;
+    div {
+        &:nth-child(2) {
+            height: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
+            width: 65px;
+            --swiper-navigation-size: 18px;
+        }
+        &:nth-child(3){
+            height: 100%;
+            top: 0;
+            right: 0;
+            margin: 0;
+            width: 65px;
+            --swiper-navigation-size: 18px;
+        }
+    }
+    .swiper-slide__content {
+        padding: 240px 96px 0;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+        background-blend-mode: multiply;
+        h2 {
+            color: white;
+            font-weight: 500;
+            line-height: 40px;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 28px;
+            line-height: 22px;
+            font-size: 24px;
+            color: #EEE;
+        }
+    }
+    .slide1 {
+        background-image: url('assets/img/jp-valery-1.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        button{
+            @include button(164px, 48px, #13493F, #0C7B1B, rgb(15, 61, 53), rgb(10, 104, 22), rgb(10, 49, 43), rgb(4, 65, 12), 4px);
+
+        }
+    }
+    .slide2 {
+        background-image: url('assets/img/jp-valery-2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        button{
+            @include button(164px, 48px, #132949, #0C7B67, #0e203a, rgb(10, 95, 80), #061324, rgb(4, 77, 63), 4px)
+        }
+    }
+    .slide3 {
+        background-image: url('assets/img/jp-valery-3.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        button{
+            @include button(164px, 48px, #493013, #7B0C3B, #3a250e, rgb(90, 7, 42), #291a0a, rgb(58, 3, 26), 4px);
+
+        }
+    }
+    .slide4 {
+        background-image: url('assets/img/jp-valery-4.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        button{
+            @include button(164px, 48px, #281349, #720C7B, #1b0b35, rgb(91, 9, 99), #110425, rgb(58, 2, 63), 4px)
+        }
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+        background-color: rgba(14, 194, 98, 0.2);
+    }
+    .swiper-pagination-bullet-active {
+        --swiper-pagination-color:  #{$cmain};
+    }
+}
+
+@media (max-width: 1350px) {
+
+    .main {
+        padding: 32px;
+        width: 560px;
+        p {
+            letter-spacing: 0px;
+        }
+        main {
+            height: 47%;
+        }
+    }
+
+    .swiper-container {
+        width: 41%;
+        .swiper-slide__content {
+            padding: 240px 55px 0;
+            h2 {
+                font-size: 32px;
+            }
+            p {
+                font-size: 22px;
+            }
+        }
+        div {
+            &:nth-child(2) {
+                width: 32px / 410px * 100%;
+                min-width: 32px;
+            }
+            &:nth-child(3) {
+                width: 32px / 410px * 100%;
+                min-width: 32px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .swiper-container {
+        display: none;
+    }
+
+    .menu {
+        width: 86px / 768px * 100%;
+    }
+}
+
+@media (max-width: 615px) {
+
+    .flex-display{
+        display: block;
+        height: auto;
+    }
+
+    .menu {
+        width: 78px;
+        position: absolute;
+        background-color: white;
+        .menu__burger {
+            margin-top: 18px;
+            width: 80%;
+            height: 28px;
+            span {
+                background-color: black;
+            }
+        }
+        .menu__language {
+            display: none;
+        }
+    }
+    
+    .main {
+        height: 100vh;
+        width: auto;
+        padding: 0;
+        header {
+            padding: 20px 20px 0 0;
+            align-items: flex-end;
+            flex-direction: column;
+        }
+        main {
+            height: 65%;
+            padding: 0 20px;
+            h1 {
+                font-size: 55px;
+                &:nth-child(2) {
+                    margin-bottom: 10px;
+                }
+            }
+            p {
+                font-size: 23px;
+                margin-bottom: 35px;
+            }
+        }
+        footer {
+            padding: 15px 20px;
+            background-color: $cblack;
+            align-items: flex-end;
+            flex-direction: column;
+            p {
+                order: 1;
+                color: $cgrayl;
+            }
+            a {
+                color: $cmain;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+
+    .menu__active {
+        .menu__burger {
+            width: 25px;
+            margin: 23px;
+        }
+        menu {
+            flex-grow: 1;
+            margin-left: 30px;
+            font-size: 22px;
+            line-height: 41px;
+            ol li {
+                width: 33px;
+            }
+        }
+        .menu__language {
+            margin: 0 19px 17px;
+        }
+    }
+    
+    .main {
+        main {
+            padding: 0;
+            h1 {
+                font-size: 32px;
+                padding: 0 20px;
+                line-height: 40px;
+            }
+            p {
+                font-size: 18px;
+                padding: 0 20px;
+                line-height: 21px;
+            }
+            button {
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+    }
+}
