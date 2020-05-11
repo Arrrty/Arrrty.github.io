@@ -14,24 +14,12 @@ class MenuBar extends React.Component {
     }
     showMenu() {
         const menu = document.querySelector("menu");
-        let main
-        if (this.props.location == "Main-page") {
-            main = document.querySelector(".main");
-        } else {
-            main = document.querySelector(".main-order");
-        }
+        this.props.onClick()
+        
         if (this.state.display) {
             menu.style.display = 'none';
-            main.style.backgroundColor = 'white';
-            for (let i=0; i < main.children.length; i++) {
-                main.children[i].style.opacity = 1;
-            }
         } else {
             menu.style.display = 'block';
-            main.style.backgroundColor = 'black';
-            for (let i=0; i < main.children.length; i++) {
-                main.children[i].style.opacity = 0;
-            }
         }
         this.setState({
             display: !this.state.display,

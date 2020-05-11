@@ -16,34 +16,34 @@ class Nav extends React.Component {
     }
 
     render() {
-        if (this.props.activeTab == "location") {
+        if (this.props.activeTab.location) {
             return (
                 <nav>
                     {this.renderSpan("location", "Местоположение", "activ-nav")}
-                    {this.renderSpan("model", "Модель", "")}
-                    {this.renderSpan("extra", "Дополнительно", "")}
-                    {this.renderSpan("total", "Итого", "")}
+                    {this.renderSpan("", "Модель", "")}
+                    {this.renderSpan("", "Дополнительно", "")}
+                    {this.renderSpan("", "Итого", "")}
                 </nav>
             );
-        } else if (this.props.activeTab == "model") {
+        } else if (this.props.activeTab.model) {
             return (
                 <nav>
                     {this.renderSpan("location", "Местоположение", "passed-nav")}
                     {this.renderSpan("model", "Модель", "activ-nav")}
-                    {this.renderSpan("extra", "Дополнительно", "")}
-                    {this.renderSpan("total", "Итого", "")}
+                    {this.renderSpan("", "Дополнительно", "")}
+                    {this.renderSpan("", "Итого", "")}
                 </nav>
             );
-        } else if (this.props.activeTab == "extra") {
+        } else if (this.props.activeTab.extra) {
             return (
                 <nav>
                     {this.renderSpan("location", "Местоположение", "passed-nav")}
                     {this.renderSpan("model", "Модель", "passed-nav")}
                     {this.renderSpan("extra", "Дополнительно", "activ-nav")}
-                    {this.renderSpan("total", "Итого", "")}
+                    {this.renderSpan("", "Итого", "")}
                 </nav>
             );
-        } else {
+        } else if (this.props.activeTab.total){
             return (
                 <nav>
                     {this.renderSpan("location", "Местоположение", "passed-nav")}

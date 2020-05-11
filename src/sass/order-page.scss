@@ -104,6 +104,12 @@ $cgrayl: #EEE;
             border-radius: 100%;
         }
     }
+    .label-checked {
+        color: $cblack;
+        &:before {
+            border: 3px solid $cmain;
+        }
+    }
 }
 
 @mixin checkbox {
@@ -310,27 +316,32 @@ $cgrayl: #EEE;
             min-height: 224px;
             border: 1px solid $cgrayl;
             position: relative;
-            &:nth-child(even) {
-                right: 1px;
-            }
             &:hover {
                 border: 1px solid $cgrayd;
                 cursor: pointer;
-                z-index: 1;
             }
-            &:focus {
-                border: 1px solid $cmain;
-            }
-            h2 {
-                font-style: normal;
-                font-weight: normal;
-                font-size: 18px;
-                line-height: 21px;
+            .cars__name {
+                position: absolute;
+                z-index: -1;
+                width: 200px;
+                h2 {
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 21px;
+                }
+                p {
+                    top: 23px;
+                }
+                span {
+                    display: none;
+                }
             }
             img {
                 position: absolute;
                 right: 15px;
                 bottom: 15px;
+                z-index: -1;
             }
         }
         .cars__active {
@@ -445,14 +456,19 @@ $cgrayl: #EEE;
         line-height: 21px;
     }
     .info__point {
+        margin-bottom: 16px;
         width: 100%;
         display: flex;
         justify-content: space-between;
+        &:last-child {
+            margin: 0;
+        }
         span {
             &:nth-child(1) {
-                width: 100px;
+                max-width: 150px;
                 color: $cblack;
                 align-self: flex-end;
+                margin-right: 5px;
             }
             &:nth-child(2) {
                 flex-grow: 1;
@@ -461,8 +477,9 @@ $cgrayl: #EEE;
             }
             &:nth-child(3) {
                 text-align: end;
-                width: 110px;
+                max-width: 110px;
                 color: $cgrayd;
+                margin-left: 5px;
             }
         }
     }
@@ -477,6 +494,12 @@ $cgrayl: #EEE;
     }
     button {
         @include button(100%, 50px, #0EC261, #039F67, #0B934A, #026E47, #076432, #013C27,  8px);
+        &:disabled {
+            background: #EEEEEE;
+        }
+    }
+    .cancel {
+        @include button(100%, 50px, #493013, #7B0C3B, #3a250e, rgb(90, 7, 42), #291a0a, rgb(58, 3, 26),  8px);
     }
 }
 

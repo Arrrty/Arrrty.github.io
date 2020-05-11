@@ -1,6 +1,7 @@
 @import "stylenull.scss";
 @import "stylefonts.scss";
 @import "order-page.scss";
+@import "admin.scss";
 
 $cmain: #0EC261;
 $cblack: #121212;
@@ -46,6 +47,11 @@ p {
     &:disabled {
         background: #EEEEEE;
     }
+}
+
+.background {
+    background: black;
+    flex-grow: 1;
 }
 
 header {
@@ -218,12 +224,8 @@ header {
             li {
                 a {
                     display: block;
-                    background-image: url(assets/img/Group.png);
-                    background-repeat: no-repeat;
-                    width: 33px;
-                    height: 33px;
-                    &:hover {
-                        background-image: url(assets/img/Group2.png);
+                    &:hover path{
+                        fill: $cmain;
                         cursor: pointer;
                     }
                 }

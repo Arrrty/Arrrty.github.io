@@ -1,8 +1,11 @@
 import React from 'react';
 
-class Search extends React.Component {
+class SearchCity extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            value: this.props.city
+        }
     }
 
     filter() {
@@ -38,14 +41,22 @@ class Search extends React.Component {
         let list = document.querySelector("." + this.props.className + "__list");
         input.value = a.innerHTML;
         list.style.display = "none";
-        svg.style.display = "block"
+        svg.style.display = "block";
+        this.props.onChange(input.value);
+        this.setState({
+            value: input.value
+        })
+
     }
 
     erase() {
         let svg = document.querySelector("." + this.props.className + " svg");
         let input = document.querySelector("." + this.props.className + " input");
         input.value = "";
-        svg.style.display = "none"
+        svg.style.display = "none";
+        this.setState({
+            value: ""
+        })
     }
 
     li(i) {
@@ -54,13 +65,26 @@ class Search extends React.Component {
         );
     }
 
+    handleChange(e) {
+        this.setState({
+            value: e.target.value
+        })
+    }
+
+
     render() {
         return (
             <div className={this.props.className}>
                 <span>{this.props.name}</span>
                 <div className={this.props.className + "__form"}>
                     <div>
-                        <input type="text" placeholder="Начните вводить город ..." onKeyUp={() => this.filter()}/>
+                        <input 
+                            value={this.state.value}
+                            onChange={(e) => this.handleChange(e)}
+                            onKeyUp={() => this.filter()} 
+                            type="text" 
+                            placeholder="Начните вводить город ..."
+                        />
                         <svg onClick={() => this.erase()} width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 0.805714L7.19429 0L4 3.19429L0.805714 0L0 0.805714L3.19429 4L0 7.19429L0.805714 8L4 4.80571L7.19429 8L8 7.19429L4.80571 4L8 0.805714Z" fill="#121212"/>
                         </svg>
@@ -79,4 +103,4 @@ class Search extends React.Component {
     }
 }
 
-export default Search;
+export default SearchCity;

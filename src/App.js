@@ -1,15 +1,16 @@
 import React from 'react';
-import './App.css';
+import './main.css';
 import MenuBar from './components/Menu/menubar';
 import Face from './components/Face/face';
 import Slider from './components/Slider/slider';
-import Popup from './components/Order/popup';
+import Admin from './components/Admin/admin';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             location: "Main-page",
+            menu: false
         };
     }
 
@@ -19,28 +20,42 @@ class App extends React.Component {
         });
     }
 
+    showMenu() {
+        this.setState({
+            menu: (this.state.menu == false ? true : false)
+        });
+    }
+
     render() {
         if (this.state.location == "Main-page") {
             return (
                 <div className="flex-display">
-                    <MenuBar location={this.state.location}/>
+                    <MenuBar 
+                        location={this.state.location}
+                        onClick={() => this.showMenu()}
+                    />
                     <Face
                         className="main"
                         onClick={() => this.transition()} 
+                        menu={this.state.menu}
                     />
                     <Slider />
                 </div>
             );
-        } else {
+        } else if (this.state.location == "Order-page") {
             return (
                 <div class="flex-display">
-                    <MenuBar />
+                    <MenuBar  onClick={() => this.showMenu()}/>
                     <Face
                         className="main-order"
-                        onClick={() => this.transition()} 
+                        onClick={() => this.transition()}
+                        menu={this.state.menu}
                     />
-                    <Popup />
                 </div>
+            );
+        } else {
+            return (
+                <Admin />
             );
         }
     }

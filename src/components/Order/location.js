@@ -1,5 +1,6 @@
 import React from 'react';
-import Search from './search';
+import SearchCity from './searchCity';
+import SearchPoint from './searchPoint';
 import Mapimg from '../../assets/img/Rectangle.png';
 
 class Location extends React.Component {
@@ -23,15 +24,19 @@ class Location extends React.Component {
         return (
             <div class="location tab-item">
                 <div class="location-search">
-                    <Search 
+                    <SearchCity
                         className={this.state.cities.className}
                         list={this.state.cities.searchList}
                         name={this.state.cities.name}
+                        onChange={(value) => this.props.onChangeCity(value)}
+                        city={this.props.location.city}
                     />
-                    <Search 
+                    <SearchPoint
                         className={this.state.points.className}
                         list={this.state.points.searchList}
                         name={this.state.points.name}
+                        onChange={(value) => this.props.onChangePoint(value)}
+                        point={this.props.location.point}
                     />
                 </div>
                 <div class="location-map" >
