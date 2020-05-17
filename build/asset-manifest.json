@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.5776da8b.chunk.css",
-    "main.js": "/static/js/main.6b7a4004.chunk.js",
-    "main.js.map": "/static/js/main.6b7a4004.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.549be430.js",
-    "runtime-main.js.map": "/static/js/runtime-main.549be430.js.map",
-    "static/js/2.fb1dcc88.chunk.js": "/static/js/2.fb1dcc88.chunk.js",
-    "static/js/2.fb1dcc88.chunk.js.map": "/static/js/2.fb1dcc88.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.ff606f50dddd0051c51711673e8a92c2.js": "/precache-manifest.ff606f50dddd0051c51711673e8a92c2.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.5776da8b.chunk.css.map": "/static/css/main.5776da8b.chunk.css.map",
-    "static/js/2.fb1dcc88.chunk.js.LICENSE.txt": "/static/js/2.fb1dcc88.chunk.js.LICENSE.txt",
-    "static/media/Rectangle.png": "/static/media/Rectangle.8cf67802.png",
-    "static/media/image 1.png": "/static/media/image 1.58e1a40d.png",
-    "static/media/image 2.png": "/static/media/image 2.444f21ad.png",
-    "static/media/image 3.png": "/static/media/image 3.1e2fee76.png",
-    "static/media/image 4.png": "/static/media/image 4.1e63c325.png",
-    "static/media/App.css": "/static/media/roboto-v20-latin_cyrillic-regular.f245f4a6.ttf"
+    "main.css": "/Arrrty.github.io/static/css/main.cf0bb544.chunk.css",
+    "main.js": "/Arrrty.github.io/static/js/main.0f86c94a.chunk.js",
+    "main.js.map": "/Arrrty.github.io/static/js/main.0f86c94a.chunk.js.map",
+    "runtime-main.js": "/Arrrty.github.io/static/js/runtime-main.db49a85d.js",
+    "runtime-main.js.map": "/Arrrty.github.io/static/js/runtime-main.db49a85d.js.map",
+    "static/js/2.fb1dcc88.chunk.js": "/Arrrty.github.io/static/js/2.fb1dcc88.chunk.js",
+    "static/js/2.fb1dcc88.chunk.js.map": "/Arrrty.github.io/static/js/2.fb1dcc88.chunk.js.map",
+    "index.html": "/Arrrty.github.io/index.html",
+    "precache-manifest.bd52bf30073c9b6db48a8688ba849dea.js": "/Arrrty.github.io/precache-manifest.bd52bf30073c9b6db48a8688ba849dea.js",
+    "service-worker.js": "/Arrrty.github.io/service-worker.js",
+    "static/css/main.cf0bb544.chunk.css.map": "/Arrrty.github.io/static/css/main.cf0bb544.chunk.css.map",
+    "static/js/2.fb1dcc88.chunk.js.LICENSE.txt": "/Arrrty.github.io/static/js/2.fb1dcc88.chunk.js.LICENSE.txt",
+    "static/media/Rectangle.png": "/Arrrty.github.io/static/media/Rectangle.8cf67802.png",
+    "static/media/image 1.png": "/Arrrty.github.io/static/media/image 1.58e1a40d.png",
+    "static/media/image 2.png": "/Arrrty.github.io/static/media/image 2.444f21ad.png",
+    "static/media/image 3.png": "/Arrrty.github.io/static/media/image 3.1e2fee76.png",
+    "static/media/image 4.png": "/Arrrty.github.io/static/media/image 4.1e63c325.png",
+    "static/media/main.css": "/Arrrty.github.io/static/media/roboto-v20-latin_cyrillic-regular.f245f4a6.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.549be430.js",
+    "static/js/runtime-main.db49a85d.js",
     "static/js/2.fb1dcc88.chunk.js",
-    "static/css/main.5776da8b.chunk.css",
-    "static/js/main.6b7a4004.chunk.js"
+    "static/css/main.cf0bb544.chunk.css",
+    "static/js/main.0f86c94a.chunk.js"
   ]
 }
