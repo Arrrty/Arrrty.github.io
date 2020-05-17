@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5776da8b.chunk.css",
+    "main.js": "/static/js/main.6b7a4004.chunk.js",
+    "main.js.map": "/static/js/main.6b7a4004.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.549be430.js",
+    "runtime-main.js.map": "/static/js/runtime-main.549be430.js.map",
+    "static/js/2.fb1dcc88.chunk.js": "/static/js/2.fb1dcc88.chunk.js",
+    "static/js/2.fb1dcc88.chunk.js.map": "/static/js/2.fb1dcc88.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ff606f50dddd0051c51711673e8a92c2.js": "/precache-manifest.ff606f50dddd0051c51711673e8a92c2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.5776da8b.chunk.css.map": "/static/css/main.5776da8b.chunk.css.map",
+    "static/js/2.fb1dcc88.chunk.js.LICENSE.txt": "/static/js/2.fb1dcc88.chunk.js.LICENSE.txt",
+    "static/media/Rectangle.png": "/static/media/Rectangle.8cf67802.png",
+    "static/media/image 1.png": "/static/media/image 1.58e1a40d.png",
+    "static/media/image 2.png": "/static/media/image 2.444f21ad.png",
+    "static/media/image 3.png": "/static/media/image 3.1e2fee76.png",
+    "static/media/image 4.png": "/static/media/image 4.1e63c325.png",
+    "static/media/App.css": "/static/media/roboto-v20-latin_cyrillic-regular.f245f4a6.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.549be430.js",
+    "static/js/2.fb1dcc88.chunk.js",
+    "static/css/main.5776da8b.chunk.css",
+    "static/js/main.6b7a4004.chunk.js"
+  ]
+}
